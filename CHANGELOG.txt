@@ -1,0 +1,8 @@
+Creative Commons field 8.x-1.0-beta1, xxxx-xx-xx
+----------------------------------
+by rafaticarte: Added settings form and field type.
+by rafaticarte: Added support for Creative Commons 1.0, 2.0, 2.5, 3.0 and 4.0.
+by rafaticarte: Added support for Creative Commons Zero 1.0.
+by rafaticarte: Added support for local images and licensebuttons.net images.
+by rafaticarte: Added support for overriding template.
+by rafaticarte: Added support for views.

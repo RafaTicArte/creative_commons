@@ -1,0 +1,11 @@
+field.formatter.settings.creative_commons_formatter_type:
+  type: mapping
+  label: 'Creative Commons Formatter'
+  mapping:
+    image_position:
+      type: string
+      label: 'Image position'
+    image_size:
+      type: string
+      label: 'Image size'
+

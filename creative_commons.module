@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * Defines a field type for attaching Creative Commons license
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function creative_commons_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the creative_commons module.
+    case 'help.page.creative_commons':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Defines a field type for attaching Creative Commons license.') . '</p>';
+      $output .= '<p>' . t('<a href=":creative_commons_site">More information about Creative Commons Licenses.</a>', [':creative_commons_site' => 'https://creativecommons.org']) . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function creative_commons_theme($existing, $type, $theme, $path) {
+  return [
+    'creative_commons' => [
+      'render element' => 'children',
+      'template' => 'creative-commons',
+      'variables' => [
+        'image_position' => NULL,
+        'cc_image' => NULL,
+        'cc_name' => NULL,
+        'cc_legal' => NULL,
+        'work_title' => NULL,
+        'work_link' => NULL,
+        'author_name' => NULL,
+        'author_link' => NULL,
+        'source_title' => NULL,
+        'source_link' => NULL,
+      ],
+    ],
+  ];
+}

@@ -1,0 +1,8 @@
+versions:
+  CC-40: CC-40
+  CC-30: CC-30
+  CC-25: CC-25
+  CC-20: CC-20
+  CC-10: CC-10
+  CC0-10: CC0-10
+image_repository: local

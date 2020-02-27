@@ -1,0 +1,63 @@
+{#
+/**
+ * @file
+ * Theme implementation for Creative Commons field.
+ *
+ * Available variables:
+ * - image_position: Position of image license.
+ * - cc_image: Link to image license.
+ * - cc_name: Translation name of license.
+ * - cc_legal: Link to legal information license.
+ * - work_title: Title of work.
+ * - work_link: Link to work.
+ * - author_name: Author name of work.
+ * - author_link: Link to author profile of work.
+ * - source_title: Title of work in which based on.
+ * - source_link: Link to work in which based on.
+ *
+ * @see template_preprocess_region()
+ *
+ * @ingroup themeable
+ */
+#}
+{# Image license #}
+{% if image_position != 'hidden' %}
+  <a href="{{ cc_legal }}"><img src="{{ cc_image }}" alt="{{ cc_name }}" /></a>
+{% endif %}
+{% if image_position == 'above' %}
+  <br />
+{% endif %}
+
+{# Work #}
+{% if work_title and work_link %}
+  <a href="{{ work_link }}">{{ work_title }}</a>
+{% elseif work_title and not work_link %}
+  {{ work_title }}
+{% endif %}
+
+{# Author #}
+{% if author_name and author_link %}
+  {% trans %}
+    by <a href="{{ author_link }}">{{ author_name }}</a>
+  {% endtrans %}
+{% elseif author_name and not author_link %}
+  {% trans %}
+    by {{ author_name }}
+  {% endtrans %}
+{% endif %}
+
+{# License #}
+{% trans %}
+  is licensed under a <a rel="license" href="{{ cc_legal }}">{{ cc_name }}</a> license
+{% endtrans %}
+
+{# Source #}
+{% if source_title and source_link %}
+  {% trans %}
+    based on <a href="{{ source_link }}">{{ source_title }}</a>
+  {% endtrans %}
+{% elseif source_title and not source_link %}
+  {% trans %}
+    based on {{ source_title }}
+  {% endtrans %}
+{% endif %}

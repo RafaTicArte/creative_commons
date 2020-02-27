@@ -1,0 +1,6 @@
+creative_commons.creative_commons_settings_form:
+  title: 'Creative Commons'
+  route_name: creative_commons.creative_commons_settings_form
+  description: 'Creative Commons license settings'
+  parent: system.admin_config_content
+  weight: 99

@@ -1,0 +1,9 @@
+creative_commons.creative_commons_settings_form:
+  path: '/admin/config/content/creative_commons'
+  defaults:
+    _form: '\Drupal\creative_commons\Form\SettingsForm'
+    _title: 'Creative Commons'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: TRUE
