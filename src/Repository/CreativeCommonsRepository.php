@@ -69,7 +69,59 @@ class CreativeCommonsRepository {
       return '';
     }
 
-    return $this->t($this->repository['types'][$cc_id]['title']);
+    $name = $this->t('Creative Commons') . ' ';
+
+    switch ($this->repository['types'][$cc_id]['terms']) {
+      case 'by':
+        $name .= $this->t('Attribution') . ' ';
+        break;
+
+      case 'by-nc':
+        $name .= $this->t('Attribution') . '-' . $this->t('NonCommercial') . ' ';
+        break;
+
+      case 'by-nc-nd':
+        $name .= $this->t('Attribution') . '-' . $this->t('NonCommercial') . '-' . $this->t('NoDerivatives') . ' ';
+        break;
+
+      case 'by-nc-sa':
+        $name .= $this->t('Attribution') . '-' . $this->t('NonCommercial') . '-' . $this->t('ShareAlike') . ' ';
+        break;
+
+      case 'by-nd':
+        $name .= $this->t('Attribution') . '-' . $this->t('NoDerivatives') . '-';
+        break;
+
+      case 'by-sa':
+        $name .= $this->t('Attribution') . '-' . $this->t('ShareAlike') . ' ';
+        break;
+
+      case 'zero':
+        $name .= $this->t('Zero') . ' ';
+        break;
+    }
+
+    switch ($this->repository['types'][$cc_id]['version']) {
+      case '4.0':
+        $name .= $this->repository['types'][$cc_id]['version'] . ' ' . $this->t('International');
+        break;
+
+      case '3.0':
+        $name .= $this->repository['types'][$cc_id]['version'] . ' ' . $this->t('Unported');
+        break;
+
+      case '2.5':
+      case '2.0':
+      case '1.0':
+        $name .= $this->repository['types'][$cc_id]['version'] . ' ' . $this->t('Generic');
+        break;
+
+      case 'zero':
+        $name .= $this->repository['types'][$cc_id]['version'] . ' ' . $this->t('Universal');
+        break;
+    }
+
+    return $name;
   }
 
   /**

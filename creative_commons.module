@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Defines a field type for attaching Creative Commons license
+ * Defines a field type for attaching Creative Commons license.
  */
 
 use Drupal\Core\Routing\RouteMatchInterface;

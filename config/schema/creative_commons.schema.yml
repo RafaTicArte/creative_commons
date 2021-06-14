@@ -8,4 +8,3 @@ field.formatter.settings.creative_commons_formatter_type:
     image_size:
       type: string
       label: 'Image size'
-

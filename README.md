@@ -24,7 +24,8 @@ None.
 -- CONFIGURATION --
 
 * Configure Creative Commons general settings in Administration » Configuration 
-» Content authoring » Creative Commons menu (admin/config/content/creative_commons).
+» Content authoring » Creative Commons menu 
+  (admin/config/content/creative_commons).
 
 * Add a new field in your entity type.
 
