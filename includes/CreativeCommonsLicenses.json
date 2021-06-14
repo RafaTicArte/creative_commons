@@ -85,7 +85,7 @@
       "terms": "by-nc-nd"
     },
     "CC-BY-NC-SA-4.0": {
-      "title": "Creative Commons Attribution-NonCommercial-Share Alike 4.0 International",
+      "title": "Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International",
       "version": "4.0",
       "terms": "by-nc-sa"
     },
@@ -95,7 +95,7 @@
       "terms": "by-nd"
     },
     "CC-BY-SA-4.0": {
-      "title": "Creative Commons Attribution-Share Alike 4.0 International",
+      "title": "Creative Commons Attribution-ShareAlike 4.0 International",
       "version": "4.0",
       "terms": "by-sa"
     },
@@ -115,7 +115,7 @@
       "terms": "by-nc-nd"
     },
     "CC-BY-NC-SA-3.0": {
-      "title": "Creative Commons Attribution-NonCommercial-Share Alike 3.0 Unported",
+      "title": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported",
       "version": "3.0",
       "terms": "by-nc-sa"
     },
@@ -125,7 +125,7 @@
       "terms": "by-nd"
     },
     "CC-BY-SA-3.0": {
-      "title": "Creative Commons Attribution-Share Alike 3.0 Unported",
+      "title": "Creative Commons Attribution-ShareAlike 3.0 Unported",
       "version": "3.0",
       "terms": "by-sa"
     },
@@ -145,7 +145,7 @@
       "terms": "by-nc-nd"
     },
     "CC-BY-NC-SA-2.5": {
-      "title": "Creative Commons Attribution-NonCommercial-Share Alike 2.5 Generic",
+      "title": "Creative Commons Attribution-NonCommercial-ShareAlike 2.5 Generic",
       "version": "2.5",
       "terms": "by-nc-sa"
     },
@@ -155,7 +155,7 @@
       "terms": "by-nd"
     },
     "CC-BY-SA-2.5": {
-      "title": "Creative Commons Attribution-Share Alike 2.5 Generic",
+      "title": "Creative Commons Attribution-ShareAlike 2.5 Generic",
       "version": "2.5",
       "terms": "by-sa"
     },
@@ -175,7 +175,7 @@
       "terms": "by-nc-nd"
     },
     "CC-BY-NC-SA-2.0": {
-      "title": "Creative Commons Attribution-NonCommercial-Share Alike 2.0 Generic",
+      "title": "Creative Commons Attribution-NonCommercial-ShareAlike 2.0 Generic",
       "version": "2.0",
       "terms": "by-nc-sa"
     },
@@ -185,7 +185,7 @@
       "terms": "by-nd"
     },
     "CC-BY-SA-2.0": {
-      "title": "Creative Commons Attribution-Share Alike 2.0 Generic",
+      "title": "Creative Commons Attribution-ShareAlike 2.0 Generic",
       "version": "2.0",
       "terms": "by-sa"
     },
@@ -205,7 +205,7 @@
       "terms": "by-nc-nd"
     },
     "CC-BY-NC-SA-1.0": {
-      "title": "Creative Commons Attribution-NonCommercial-Share Alike 1.0 Generic",
+      "title": "Creative Commons Attribution-NonCommercial-ShareAlike 1.0 Generic",
       "version": "1.0",
       "terms": "by-nc-sa"
     },
@@ -215,7 +215,7 @@
       "terms": "by-nd"
     },
     "CC-BY-SA-1.0": {
-      "title": "Creative Commons Attribution-Share Alike 1.0 Generic",
+      "title": "Creative Commons Attribution-ShareAlike 1.0 Generic",
       "version": "1.0",
       "terms": "by-sa"
     },
