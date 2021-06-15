@@ -121,23 +121,23 @@ class CreativeCommonsFormatter extends FormatterBase implements ContainerFactory
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $config = $this->configFactory->get('creative_commons.settings');
     $creativeCommonsRepository = CreativeCommonsRepository::getInstance();
-    $node = $this->routeMatch->getParameter('node');
+    $entity = $items->getEntity();
 
     $elements = [];
 
     foreach ($items as $delta => $item) {
-      if ($item->author_name == '' and $node != NULL) {
-        $work_title = $node->getTitle();
-        $work_link = $node->toURL()->toString();
+      if ($item->work_title == '' and $entity->getEntityTypeId() == 'node') {
+        $work_title = $entity->getTitle();
+        $work_link = $entity->toURL()->toString();
       }
       else {
         $work_title = $item->work_title;
         $work_link = $item->work_link;
       }
 
-      if ($item->author_name == '' and $node != NULL) {
-        $author_name = $node->getOwner()->getDisplayName();
-        $author_link = $node->getOwner()->toURL()->toString();
+      if ($item->author_name == '' and $entity->getEntityTypeId() == 'node') {
+        $author_name = $entity->getOwner()->getDisplayName();
+        $author_link = $entity->getOwner()->toURL()->toString();
       }
       elseif ($creativeCommonsRepository->isZero($item->cc_id)) {
         $author_name = '';

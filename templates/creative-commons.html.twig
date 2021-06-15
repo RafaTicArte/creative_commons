@@ -33,6 +33,10 @@
   <a href="{{ work_link }}">{{ work_title }}</a>
 {% elseif work_title and not work_link %}
   {{ work_title }}
+{% elseif not work_title %}
+  {% trans %}
+    This work
+  {% endtrans %}
 {% endif %}
 
 {# Author #}
