@@ -33,8 +33,12 @@ None.
 -- CUSTOMIZATION --
 
 * To override default template copy templates/creative-commons.html.twig file
-in your theme. See inside for an overview of the variables you can use.
+  in your theme. See inside for an overview of the variables you can use.
 
+* To override field template copy 
+  templates/field--node--field-creativecommons.html.twig file in your theme and
+  change name with your field name. See inside for an overview of the variables 
+  you can use.
 
 -- IMAGES --
 

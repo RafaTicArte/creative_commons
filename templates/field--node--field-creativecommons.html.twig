@@ -1,0 +1,89 @@
+{#
+/**
+ * @file
+ * Theme implementation for override template field. Suggestion:
+ * field--node--field-name.html.twig
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - label_hidden: Whether to show the field label or not.
+ * - title_attributes: HTML attributes for the label.
+ * - label: The label for the field.
+ * - content_attributes: HTML attributes for the content.
+ * - items: List of all the field items. Each item contains:
+ *   - attributes: List of HTML attributes for each item.
+ *   - content: The field item's content. With specify vaiables:
+ *     - image_position: Position of image license.
+ *     - cc_image: Link to image license.
+ *     - item.content['#cc_name']: Translation name of license.
+ *     - item.content['#cc_legal']: Link to legal information license.
+ *     - item.content['#work_title']: Title of work.
+ *     - item.content['#work_link']: Link to work.
+ *     - item.content['#author_name']: Author name of work.
+ *     - item.content['#author_link']: Link to author profile of work.
+ *     - item.content['#source_title']: Title of work in which based on.
+ *     - item.content['#source_link']: Link to work in which based on.
+ * - entity_type: The entity type to which the field belongs.
+ * - field_name: The name of the field.
+ * - field_type: The type of the field.
+ * - label_display: The display settings for the label.
+ *
+ * @see template_preprocess_field()
+ */
+#}
+{#
+/**
+ * @file
+ * Theme implementation for Creative Commons field.
+ *
+ * Available variables:
+
+ *
+ * @see template_preprocess_region()
+ *
+ * @ingroup themeable
+ */
+#}
+{% for item in items %}
+   {# Image license #}
+   {% if item.content['#image_position'] != 'hidden' %}
+     <a href="{{ item.content['#cc_legal'] }}"><img src="{{ item.content['#cc_image'] }}" alt="{{ item.content['#cc_name'] }}" /></a>
+   {% endif %}
+   {% if item.content['#image_position'] == 'above' %}
+     <br />
+   {% endif %}
+
+   {# Work #}
+   {% if item.content['#work_title'] and item.content['#work_link'] %}
+     <a href="{{ item.content['#work_link'] }}">{{ item.content['#work_title'] }}</a>
+   {% elseif item.content['#work_title'] and not item.content['#work_link'] %}
+     {{ item.content['#work_title'] }}
+   {% endif %}
+
+   {# Author #}
+   {% if item.content['#author_name'] and item.content['#author_link'] %}
+     {% trans %}
+       by <a href="{{ item.content['#author_link'] }}">{{ item.content['#author_name'] }}</a>
+     {% endtrans %}
+   {% elseif item.content['#author_name'] and not item.content['#author_link'] %}
+     {% trans %}
+       by {{ item.content['#author_name'] }}
+     {% endtrans %}
+   {% endif %}
+
+   {# License #}
+   {% trans %}
+     is licensed under a <a rel="license" href="{{ item.content['#cc_legal'] }}">{{ item.content['#cc_name'] }}</a> license
+   {% endtrans %}
+
+   {# Source #}
+   {% if item.content['#source_title'] and item.content['#source_link'] %}
+     {% trans %}
+       based on <a href="{{ item.content['#source_link'] }}">{{ item.content['#source_title'] }}</a>
+     {% endtrans %}
+   {% elseif item.content['#source_title'] and not item.content['#source_link'] %}
+     {% trans %}
+       based on {{ item.content['#source_title'] }}
+     {% endtrans %}
+   {% endif %}
+{% endfor %}
