@@ -70,6 +70,7 @@ class CreativeCommonsFormatter extends FormatterBase implements ContainerFactory
    */
   public static function defaultSettings() {
     return [
+      'license_name' => 'long',
       'image_position' => 'above',
       'image_size' => 'medium',
     ] + parent::defaultSettings();
@@ -79,6 +80,16 @@ class CreativeCommonsFormatter extends FormatterBase implements ContainerFactory
    * {@inheritdoc}
    */
   public function settingsForm(array $form, FormStateInterface $form_state) {
+    $elements['license_name'] = [
+      '#title' => $this->t('License name'),
+      '#type' => 'select',
+      '#options' => [
+        'long' => $this->t('Long'),
+        'short' => $this->t('Short'),
+      ],
+      '#default_value' => $this->getSetting('license_name'),
+    ];
+
     $elements['image_position'] = [
       '#title' => $this->t('Image position'),
       '#type' => 'select',
@@ -109,6 +120,7 @@ class CreativeCommonsFormatter extends FormatterBase implements ContainerFactory
   public function settingsSummary() {
     $summary = [];
 
+    $summary[] = $this->t('License name: @license_name', ['@license_name' => ucfirst($this->getSetting('license_name'))]);
     $summary[] = $this->t('License image position: @image_position', ['@image_position' => ucfirst($this->getSetting('image_position'))]);
     $summary[] = $this->t('License image size: @image_size', ['@image_size' => ucfirst($this->getSetting('image_size'))]);
 
@@ -152,7 +164,7 @@ class CreativeCommonsFormatter extends FormatterBase implements ContainerFactory
         '#theme' => 'creative_commons',
         '#image_position' => $this->getSetting('image_position'),
         '#cc_image' => $creativeCommonsRepository->getImage($item->cc_id, $this->getSetting('image_size'), $config->get('image_repository')),
-        '#cc_name' => $creativeCommonsRepository->getName($item->cc_id),
+        '#cc_name' => $creativeCommonsRepository->getName($item->cc_id, $this->getSetting('license_name')),
         '#cc_legal' => $creativeCommonsRepository->getLegal($item->cc_id),
         '#work_title' => $work_title,
         '#work_link' => $work_link,
