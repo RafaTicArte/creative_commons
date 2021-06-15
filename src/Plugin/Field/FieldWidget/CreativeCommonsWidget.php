@@ -120,7 +120,7 @@ class CreativeCommonsWidget extends WidgetBase implements ContainerFactoryPlugin
     $element['author_link'] = [
       '#type' => 'url',
       '#title' => $this->t('Author link'),
-      '#description' => $this->t('Leave blank to show the author link of content. Only available in <em>node</em> entities.'),
+      '#description' => $this->t('Leave blank to link the author of content. Only available in <em>node</em> entities.'),
       '#default_value' => isset($items[$delta]->author_link) ? $items[$delta]->author_link : NULL,
       '#size' => $this->getSetting('size'),
       '#maxlength' => $this->getSetting('max_length'),
