@@ -28,7 +28,7 @@ class CreativeCommonsRepository {
    * Construct for loading CreativeCommonsLicense.json file.
    */
   private function __construct() {
-    $file = file_get_contents(drupal_get_path('module', 'creative_commons') . '/includes/CreativeCommonsLicenses.json');
+    $file = file_get_contents(\Drupal::service('extension.list.module')->getPath('creative_commons') . '/includes/CreativeCommonsLicenses.json');
     if ($file == FALSE) {
       \Drupal::logger('creative_commons')->error('<em>CreativeCommonsLicenses.json</em> file is not found');
       $this->repository = [];
@@ -159,7 +159,7 @@ class CreativeCommonsRepository {
 
     switch ($source) {
       case 'local':
-        $image .= $base_path . drupal_get_path('module', 'creative_commons') . '/images/';
+        $image .= $base_path . \Drupal::service('extension.list.module')->getPath('creative_commons') . '/images/';
         break;
 
       case 'licensebuttons':

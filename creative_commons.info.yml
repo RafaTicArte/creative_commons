@@ -1,7 +1,7 @@
 name: 'Creative Commons'
 type: module
 description: 'Defines a field type for attaching Creative Commons license.'
-core_version_requirement: ^8 || ^9
+core_version_requirement: ^8 || ^9 || ^10
 package: 'Field types'
 dependencies:
   - drupal:field
